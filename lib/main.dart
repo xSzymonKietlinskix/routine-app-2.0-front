@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:routine_app_front/src/utilis/theme/theme.dart';
 import 'src/features/authentication/screens/login/login_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const RoutineApp());
-}
+void main() => runApp(const RoutineApp());
 
 class RoutineApp extends StatelessWidget {
   const RoutineApp({super.key});
@@ -17,9 +10,19 @@ class RoutineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Routine App',
-      home: LoginScreen(),
+        theme: TAppTheme.lightTheme,
+        darkTheme: TAppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: AppHome(),
     );
+  }
+}
+
+class AppHome extends StatelessWidget {
+  const AppHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(child: LoginScreen());
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_strings.dart';
-import '../../../../constants/text_styles.dart';
 
 class LoginHeaderWidget extends StatelessWidget {
   const LoginHeaderWidget({
@@ -21,8 +20,8 @@ class LoginHeaderWidget extends StatelessWidget {
           image: AssetImage(tWelcomeScreenImage),
           height: size.height * 0.2,
         ),
-        Text(tLoginTitle, style: AppTextStyles.headline1),
-        Text(tLoginSubTitle, style: AppTextStyles.body),
+        Text(tLoginTitle, style: Theme.of(context).textTheme.headlineLarge),
+        Text(tLoginSubTitle, style: Theme.of(context).textTheme.bodyMedium),
       ],
     );
   }

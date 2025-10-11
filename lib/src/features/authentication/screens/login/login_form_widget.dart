@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants/button_styles.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
 
@@ -53,7 +52,6 @@ class LoginForm extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text(tLogin.toUpperCase()),
-                style: AppButtonStyles.primary,
               ),
             ),
           ],

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
-import '../../../../constants/text_styles.dart';
+
 
 
 class LoginFooterWidget extends StatelessWidget {
@@ -21,11 +21,11 @@ class LoginFooterWidget extends StatelessWidget {
           child: Text.rich(
             TextSpan(
               text: tDontHaveAccount,
-              style: AppTextStyles.body,
+              style: Theme.of(context).textTheme.bodyMedium,
               children: [
                 TextSpan(
                   text: " $tSignUp",
-                  style: AppTextStyles.body.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Colors.blue,
                   ),
                 ),
