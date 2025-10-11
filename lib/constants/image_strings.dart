@@ -1,0 +1,1 @@
+const String tWelcomeScreenImage = "assets/images/welcome-screen-image.png";

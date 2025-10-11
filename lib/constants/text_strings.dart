@@ -1,0 +1,9 @@
+const String tWelcomeTitle = "Routine app";
+const String tLoginTitle = "Welcome Back,";
+const String tLoginSubTitle = "Keep it tracked and organized";
+const String tEmail = "Email";
+const String tPassword = "Password";
+const String tForgotPassword = "Forgot Password?";
+const String tLogin = "Login";
+const String tDontHaveAccount = "Don't have an Account?";
+const String tSignUp = "Sign Up";
