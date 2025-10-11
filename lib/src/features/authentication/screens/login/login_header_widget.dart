@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/image_strings.dart';
-import '../../constants/text_strings.dart';
-import '../../constants/text_styles.dart';
+import '../../../../constants/image_strings.dart';
+import '../../../../constants/text_strings.dart';
+import '../../../../constants/text_styles.dart';
 
 class LoginHeaderWidget extends StatelessWidget {
   const LoginHeaderWidget({

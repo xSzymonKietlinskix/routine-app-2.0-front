@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/sizes.dart';
-import '../../constants/text_strings.dart';
-import '../../constants/text_styles.dart';
+import '../../../../constants/sizes.dart';
+import '../../../../constants/text_strings.dart';
+import '../../../../constants/text_styles.dart';
+
 
 class LoginFooterWidget extends StatelessWidget {
   const LoginFooterWidget({
