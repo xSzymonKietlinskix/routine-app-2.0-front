@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
-import '../register/register_screen.dart';
+import '../login/login_screen.dart';
 
 
 
-class LoginFooterWidget extends StatelessWidget {
-  const LoginFooterWidget({
+class RegisterFooterWidget extends StatelessWidget {
+  const RegisterFooterWidget({
     super.key,
   });
 
@@ -21,16 +21,16 @@ class LoginFooterWidget extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const RegisterScreen()),
+              MaterialPageRoute(builder: (context) => const LoginScreen()),
             );
           },
           child: Text.rich(
             TextSpan(
-              text: tDontHaveAccount,
+              text: tAlreadyHaveAccount,
               style: Theme.of(context).textTheme.bodyMedium,
               children: [
                 TextSpan(
-                  text: " $tSignUp",
+                  text: " $tSignIn",
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Colors.blue,
                   ),

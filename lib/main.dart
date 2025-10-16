@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:routine_app_front/src/utilis/theme/theme.dart';
 import 'src/features/authentication/screens/login/login_screen.dart';
+import 'src/features/authentication/screens/register/register_screen.dart';
+import 'src/features/authentication/screens/welcome/welcome_screen.dart';
 
 void main() => runApp(const RoutineApp());
 
@@ -23,6 +25,6 @@ class AppHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: LoginScreen());
+    return SafeArea(child: WelcomeScreen());
   }
 }
