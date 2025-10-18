@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
 import '../../controllers/signup_controller.dart';
+import '../../controllers/signup_validation.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({super.key});
@@ -27,6 +28,7 @@ class RegisterForm extends StatelessWidget {
                 hintText: tName,
                 border: OutlineInputBorder(),
               ),
+              validator: SignupValidator.name,
             ),
             SizedBox(height: tFormHeight - 20),
             TextFormField(
@@ -37,33 +39,51 @@ class RegisterForm extends StatelessWidget {
                 hintText: tEmail,
                 border: OutlineInputBorder(),
               ),
+              validator: SignupValidator.email,
             ),
             SizedBox(height: tFormHeight - 20),
-            TextFormField(
-              controller: controller.password,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
-                labelText: tPassword,
-                hintText: tPassword,
-                border: OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.remove_red_eye_sharp),
+            Obx(
+              () => TextFormField(
+                controller: controller.password,
+                obscureText: controller.isPasswordHidden.value,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.fingerprint),
+                  labelText: tPassword,
+                  hintText: tPassword,
+                  border: OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    onPressed: controller.togglePasswordVisibility,
+                    icon: Icon(
+                      controller.isPasswordHidden.value
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                  ),
                 ),
+                validator: SignupValidator.password,
               ),
             ),
             SizedBox(height: tFormHeight - 20),
-            TextFormField(
-              controller: controller.rePassword,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
-                labelText: tReTypePassword,
-                hintText: tReTypePassword,
-                border: OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.remove_red_eye_sharp),
+            Obx(
+              () => TextFormField(
+                controller: controller.rePassword,
+                obscureText: controller.isRePasswordHidden.value,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.fingerprint),
+                  labelText: tReTypePassword,
+                  hintText: tReTypePassword,
+                  border: OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    onPressed: controller.toggleRePasswordVisibility,
+                    icon: Icon(
+                      controller.isRePasswordHidden.value
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                  ),
                 ),
+                validator: (v) =>
+                    SignupValidator.rePassword(v, controller.password.text),
               ),
             ),
             const SizedBox(height: tFormHeight - 20),
@@ -72,10 +92,12 @@ class RegisterForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if(_formKey.currentState!.validate()){
-                    SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                  if (_formKey.currentState!.validate()) {
+                    SignUpController.instance.registerUser(
+                      controller.email.text.trim(),
+                      controller.password.text.trim(),
+                    );
                   }
-
                 },
                 child: Text(tRegister.toUpperCase()),
               ),

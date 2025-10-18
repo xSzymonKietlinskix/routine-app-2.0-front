@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:routine_app_front/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:routine_app_front/src/features/navigation/screens/bottom_navigation_screen.dart';
 
+import 'exceptions/signin_email_password_failure.dart';
 import 'exceptions/signup_email_password_failure.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -52,8 +52,16 @@ class AuthenticationRepository extends GetxController {
   ) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
+      firebaseUser.value != null ? Get.offAll(() => const BottomNavigationScreen()) : Get.offAll(() => const WelcomeScreen());
     } on FirebaseAuthException catch (e) {
-    } catch (_) {}
+      final ex = SignInWithEmailAndPasswordFailure.code(e.code);
+      print('FIREBASE AUTH EXCEPTION: ${ex.message}');
+      throw ex;
+    } catch (_) {
+      final ex = SignInWithEmailAndPasswordFailure();
+      print('EXCEPTION: ${ex.message}');
+      throw ex;
+    }
   }
 
   Future<void> logout() async {

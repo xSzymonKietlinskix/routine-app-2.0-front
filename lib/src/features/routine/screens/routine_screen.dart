@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// import '../../../constants/sizes.dart';
+import '../../../constants/sizes.dart';
 
 
 
@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 // import 'login_form_widget.dart';
 // import 'login_header_widget.dart';
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+class RoutineScreen extends StatelessWidget {
+  const RoutineScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,11 @@ class SettingsScreen extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            // padding: const EdgeInsets.all(tDefaultPadding),
+            padding: const EdgeInsets.all(tDefaultPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("SETTINGS SCREEN")
+                Text("ROUTINE SCREEN")
                 // LoginHeaderWidget(size: size),
                 // const LoginForm(),
                 // const LoginFooterWidget(),

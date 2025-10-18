@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:routine_app_front/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:routine_app_front/src/utilis/theme/theme.dart';
 import 'firebase_options.dart';
-import 'src/features/authentication/screens/login/login_screen.dart';
-import 'src/features/authentication/screens/register/register_screen.dart';
-import 'src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -25,16 +22,16 @@ class RoutineApp extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: AppHome(),
+      home: const CircularProgressIndicator(),
     );
   }
 }
 
-class AppHome extends StatelessWidget {
-  const AppHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(child: WelcomeScreen());
-  }
-}
+// class AppHome extends StatelessWidget {
+//   const AppHome({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return SafeArea(child: BottomNavigationScreen());
+//   }
+// }
