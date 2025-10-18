@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-import '../../../../constants/sizes.dart';
+import '../../../constants/sizes.dart';
 // import 'login_footer_widget.dart';
 // import 'login_form_widget.dart';
 // import 'login_header_widget.dart';
@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text("HOME SCREEN")
                 // LoginHeaderWidget(size: size),
                 // const LoginForm(),
                 // const LoginFooterWidget(),

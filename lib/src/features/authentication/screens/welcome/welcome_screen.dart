@@ -4,6 +4,7 @@ import '../../../../constants/sizes.dart';
 
 // import 'register_footer_widget.dart';
 // import 'register_form_widget.dart';
+import 'package:get/get.dart';
 import '../../../../constants/text_strings.dart';
 import 'welcome_header_widget.dart';
 import '../register/register_screen.dart';
@@ -31,36 +32,20 @@ class WelcomeScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const LoginScreen(),
-                                    ),
-                                  );
-                                },
+                                onPressed: () => Get.to(const LoginScreen()),
                                 child: Text(tLogin.toUpperCase()),
                               ),
                             ),
                             const SizedBox(width: 10),
                             Expanded(
                               child: OutlinedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegisterScreen(),
-                                    ),
-                                  );
-                                },
+                                onPressed: () => Get.to(const RegisterScreen()),
                                 child: Text(tRegister.toUpperCase()),
                               ),
                             ),
                           ],
                         ),
-                        // const LoginForm(),
-                        // const LoginFooterWidget(),
+
                       ],
                     )
                     .animate()

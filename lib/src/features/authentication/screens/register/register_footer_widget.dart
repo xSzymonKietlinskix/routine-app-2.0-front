@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
 import '../login/login_screen.dart';
@@ -18,12 +18,8 @@ class RegisterFooterWidget extends StatelessWidget {
       children: [
         const SizedBox(height: tFormHeight - 20),
         TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const LoginScreen()),
-            );
-          },
+          onPressed: () => Get.to(const LoginScreen()),
+
           child: Text.rich(
             TextSpan(
               text: tAlreadyHaveAccount,
