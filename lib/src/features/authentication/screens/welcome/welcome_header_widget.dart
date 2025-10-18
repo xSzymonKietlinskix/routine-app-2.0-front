@@ -16,9 +16,12 @@ class WelcomeHeaderWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image(
-          image: AssetImage(tWelcomeScreenImage),
-          height: size.height * 0.5
+        Hero(
+          tag: 'test',
+          child: Image(
+            image: AssetImage(tWelcomeScreenImage),
+            height: size.height * 0.5
+          ),
         ),
         Text(tWelcomeTitle, style: Theme.of(context).textTheme.headlineLarge),
         Text(tWelcomeSubTitle, style: Theme.of(context).textTheme.bodyMedium),

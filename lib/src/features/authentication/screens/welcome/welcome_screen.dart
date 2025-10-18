@@ -8,6 +8,7 @@ import '../../../../constants/text_strings.dart';
 import 'welcome_header_widget.dart';
 import '../register/register_screen.dart';
 import '../login/login_screen.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -20,42 +21,51 @@ class WelcomeScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(tDefaultPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                WelcomeHeaderWidget(size: size),
-                const SizedBox(height: tFormHeight),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const LoginScreen()),
-                            );
-                          },
-                          child: Text(tLogin.toUpperCase()),
+            child:
+                Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        WelcomeHeaderWidget(size: size),
+                        const SizedBox(height: tFormHeight),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const LoginScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Text(tLogin.toUpperCase()),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: OutlinedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RegisterScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Text(tRegister.toUpperCase()),
+                              ),
+                            ),
+                          ],
                         ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: OutlinedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const RegisterScreen()),
-                            );
-                          },
-                          child: Text(tRegister.toUpperCase()),
-                        ),
-                    ),
-                  ],
-                ),
-                // const LoginForm(),
-                // const LoginFooterWidget(),
-              ],
-            ),
+                        // const LoginForm(),
+                        // const LoginFooterWidget(),
+                      ],
+                    )
+                    .animate()
+                    .fadeIn(duration: 800.ms)
+                    .slideY(begin: 0.2, curve: Curves.easeOut),
           ),
         ),
       ),
