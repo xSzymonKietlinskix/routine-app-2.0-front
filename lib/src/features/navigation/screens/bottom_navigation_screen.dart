@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:routine_app_front/src/features/calendar/screens/calendar_screen.dart';
-import 'package:routine_app_front/src/features/routine/screens/routine_screen.dart';
+// import 'package:routine_app_front/src/features/routine/screens/routine_screen.dart';
 import 'package:routine_app_front/src/features/todos/screens/todos_screen.dart';
 import '../../../constants/colors.dart';
 import '../../home/screens/home_screen.dart';
@@ -20,7 +20,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   final List<Widget> _screens = const [
     HomeScreen(),
     ToDosScreen(),
-    RoutineScreen(),
+    // RoutineScreen(),
     CalendarScreen(),
     SettingsScreen(),
   ];
@@ -61,11 +61,11 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                 icon: Badge(child: Icon(Icons.checklist_outlined)),
                 label: 'To do',
               ),
-              NavigationDestination(
-                selectedIcon: Badge(child: Icon(Icons.repeat_on_outlined)),
-                icon: Badge(child: Icon(Icons.repeat_outlined)),
-                label: 'Routine',
-              ),
+              // NavigationDestination(
+              //   selectedIcon: Badge(child: Icon(Icons.repeat_on_outlined)),
+              //   icon: Badge(child: Icon(Icons.repeat_outlined)),
+              //   label: 'Routine',
+              // ),
               NavigationDestination(
                 selectedIcon: Badge(child: Icon(Icons.calendar_today_outlined)),
                 icon: Badge(child: Icon(Icons.calendar_month_outlined)),

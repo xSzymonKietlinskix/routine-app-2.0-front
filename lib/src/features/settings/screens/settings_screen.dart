@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:routine_app_front/src/constants/text_strings.dart';
 
-// import '../../../constants/sizes.dart';
-
-
-
-// import 'login_footer_widget.dart';
-// import 'login_form_widget.dart';
-// import 'login_header_widget.dart';
+// Pamiętaj o imporcie swoich nowych widgetów (jeśli są w tym samym folderze, wystarczą same nazwy plików):
+import '../widgets/settings_account_widget.dart';
+import '../widgets/settings_preferences_widget.dart';
+import '../widgets/settings_appearance_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text(tSettings),
+          centerTitle: true,
+        ),
         body: SingleChildScrollView(
           child: Container(
-            // padding: const EdgeInsets.all(tDefaultPadding),
-            child: Column(
+            padding: const EdgeInsets.all(16.0),
+            child: Column( // Dodano 'const', bo wszystkie dzieci są teraz const
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("SETTINGS SCREEN")
-                // LoginHeaderWidget(size: size),
-                // const LoginForm(),
-                // const LoginFooterWidget(),
+                SettingsAppearanceWidget(),
+                // SettingsPreferencesWidget(),
+                SettingsAccountWidget(),
               ],
             ),
           ),
@@ -34,5 +34,3 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-
-

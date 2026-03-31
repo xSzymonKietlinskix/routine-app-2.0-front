@@ -28,3 +28,10 @@ const String tWrongReTypePassword = "Passwords do not match";
 
 const String tWelcomeTitle = "Welcome to Routine Tracker!";
 const String tWelcomeSubTitle = "Your journey to a more organized and productive life starts now.";
+
+//settings
+
+const String tSettings = "Settings";
+const String tTheme = "Theme";
+const String tDarkTheme = "Dark theme";
+const String tLogout = "LogOut";
