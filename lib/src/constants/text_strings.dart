@@ -35,3 +35,30 @@ const String tSettings = "Settings";
 const String tTheme = "Theme";
 const String tDarkTheme = "Dark theme";
 const String tLogout = "LogOut";
+
+//calendar
+
+const String tCallendarEvent = "Events";
+const String tCallendarEventPlaceHolder = "No events for this day!";
+const String tError = "Error!";
+const String tErrorNoTitle = "Please enter a title!";
+const String tSaved = "Saved";
+const String tTitle = "Title";
+const String tAllDay = "All day";
+const String tTodoList = "ToDo list";
+const String tFrom = "From";
+const String tTo = "To";
+const String tNewTask = "New task...";
+const String tSave = "Save";
+const String tNever = "Never";
+const String tDaily = "Daily";
+const String tWeekly = "Weekly";
+const String tMonthly = "Monthly";
+const String tRepeat = "Repeat";
+const String tEnterTitle = "Enter title";
+const String tSuccess = "Success";
+// const String tError = "Error";
+const String tEventAdded = "Event added successfully!";
+const String tSomethingWentWrong = "Something went wrong: ";
+const String tRepeatUntil = "Powtarzaj do:";
+const String tNoLimit = "Bez końca";

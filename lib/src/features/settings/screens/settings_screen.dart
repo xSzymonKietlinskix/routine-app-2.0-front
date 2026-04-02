@@ -13,10 +13,10 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text(tSettings),
-          centerTitle: true,
-        ),
+        // appBar: AppBar(
+        //   title: const Text(tSettings),
+        //   centerTitle: true,
+        // ),
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(16.0),

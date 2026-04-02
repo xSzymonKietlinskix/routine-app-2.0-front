@@ -30,10 +30,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text("Kalendarz"),
-          centerTitle: true,
-        ),
+        // appBar: AppBar(
+        //   title: const Text("Kalendarz"),
+        //   centerTitle: true,
+        // ),
         body: Column(
           children: [
             // 1. WIDŻET KALENDARZA

@@ -4,12 +4,16 @@ import 'package:routine_app_front/src/repository/authentication_repository/authe
 import 'package:routine_app_front/src/utilis/theme/theme.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
+import 'package:routine_app_front/src/repository/calendar_repository/calendar_repository.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ).then((value) => Get.put(AuthenticationRepository()));
+  ).then((value) {
+    Get.put(AuthenticationRepository()); // To już miałeś/aś
+    Get.put(CalendarRepository());
+  });
   runApp(const RoutineApp());
 }
 
